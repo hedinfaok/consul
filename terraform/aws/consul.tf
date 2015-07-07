@@ -45,7 +45,7 @@ resource "aws_security_group" "consul" {
     name = "consul"
     description = "Consul internal traffic + maintenance."
 
-    // These are for internal traffic
+    # These are for internal traffic
     ingress {
         from_port = 0
         to_port = 65535
@@ -60,7 +60,7 @@ resource "aws_security_group" "consul" {
         self = true
     }
 
-    // These are for maintenance
+    # These are for maintenance
     ingress {
         from_port = 22
         to_port = 22
@@ -68,7 +68,7 @@ resource "aws_security_group" "consul" {
         cidr_blocks = ["0.0.0.0/0"]
     }
 
-    // This is for outbound internet access
+    # This is for outbound internet access
     egress {
         from_port = 0
         to_port = 0
