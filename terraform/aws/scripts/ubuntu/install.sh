@@ -30,3 +30,12 @@ chmod 0644 /etc/service/consul-join
 echo "Installing Upstart service..."
 sudo mv /tmp/upstart.conf /etc/init/consul.conf
 sudo mv /tmp/upstart-join.conf /etc/init/consul-join.conf
+
+echo "Downloading Consul web ui ..."
+cd /tmp
+wget https://dl.bintray.com/mitchellh/consul/0.5.2_web_ui.zip -O consul-ui.zip
+
+echo "Installing Consul web ui ..."
+unzip consul-ui.zip >/dev/null
+sudo mkdir /opt/consul-ui/
+sudo mv dist /opt/consul-ui/

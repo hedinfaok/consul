@@ -6,7 +6,7 @@ SERVER_COUNT=$(cat /tmp/consul-server-count | tr -d '\n')
 
 # Write the flags to a temporary file
 cat >/tmp/consul_flags << EOF
-export CONSUL_FLAGS="-server -bootstrap-expect=${SERVER_COUNT} -data-dir=/mnt/consul"
+export CONSUL_FLAGS="-server -bootstrap-expect=${SERVER_COUNT} -data-dir=/mnt/consul -ui-dir=/opt/consul-ui/dist/"
 EOF
 
 # Write it to the full service file
