@@ -50,3 +50,7 @@ variable "tagName" {
     default = "consul"
     description = "Name tag for the servers"
 }
+
+variable "vpc_id" {
+    description = "The VPC ID. Use this if you don't have a default VPC defined in AWS."
+}
